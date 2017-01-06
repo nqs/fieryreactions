@@ -3,8 +3,7 @@ import Grid from './grid';
 
 const mapStateToProps = (state) => {
   return {
-    messages: state.messageState.messages,
-    width: 500
+    board: state.boardState.board,
   };
 };
 

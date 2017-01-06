@@ -20,7 +20,6 @@ const Grid = () => {
 };
 
 Grid.propTypes = {
-  width: PropTypes.number.isRequired,
 };
 
 

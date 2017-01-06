@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 import configureStore from './store/configureStore';
+import { Listeners } from './utils/listeners';
 require('./favicon.ico');
 require('./icon.png');
 import '../node_modules/font-awesome/css/font-awesome.min.css';
@@ -16,6 +17,8 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
+const listeners = new Listeners(store);
+listeners.startListening();
 
 render(
   <Provider store={store}>

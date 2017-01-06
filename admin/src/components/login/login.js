@@ -1,13 +1,12 @@
 import {connect} from 'react-redux';
-import Grid from './grid';
+import SignIn from './signin';
 
 const mapStateToProps = (state) => {
   return {
-    messages: state.messageState.messages,
-    width: 500
+    user: state.loginState.user,
   };
 };
 
 export default connect(
   mapStateToProps
-)(Grid);
+)(SignIn);

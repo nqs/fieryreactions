@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import Navigation from './shared/navigation';
-import { Listeners } from '../utils/listeners';
 
 const App = (props) => {
 

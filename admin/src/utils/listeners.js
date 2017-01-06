@@ -1,7 +1,3 @@
-import { connect } from 'react-redux';
-import React, { PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-import { boards } from './firebase';
 import * as Actions from '../actions';
 
 export class Listeners {
