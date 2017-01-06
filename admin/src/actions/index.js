@@ -1,2 +1,2 @@
-export * from './messageActions';
+export * from './boardActions';
 export * from './loginActions';
