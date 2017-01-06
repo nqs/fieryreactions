@@ -8,13 +8,13 @@ body {
   font-smoothing: antialiased;
   font-weight: 300;
 }
-
-.center{
-  float: none;
-  margin: 0 auto;
+.navbar-right{
+  padding-right:10px;
 }
-
 .cell{
     border: 5px black solid;
     font-size: 20vw;
+}
+.grid {
+    margin: 0px auto;
 }

@@ -10,7 +10,7 @@ const authorize =  (nextState, replace) => {
   if(!auth.currentUser)
   {
     return replace({
-      pathname: '/login'
+      pathname: '/'
     });
   }
 };

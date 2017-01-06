@@ -1,7 +1,8 @@
 import React, {PropTypes} from 'react';
 
 const SignIn = (props) => {
-  const login = props.login;
+  const { login } = props;
+  const test = () => alert('CLICK');
   return (
     <div>
       <button className="btn btn-lg btn-primary btn-block" type="button" onClick={login}>Sign in</button>

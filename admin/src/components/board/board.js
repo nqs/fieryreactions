@@ -4,6 +4,7 @@ import Grid from './grid';
 const mapStateToProps = (state) => {
   return {
     board: state.boardState.board,
+    user: state.loginState.user,
   };
 };
 

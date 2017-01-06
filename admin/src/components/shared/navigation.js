@@ -3,13 +3,19 @@ import {bindActionCreators} from 'redux';
 import NavigationControl from './NavigationControl';
 import * as actions from '../../actions';
 
-function mapDispatchToProps(dispatch) {
+const mapStateToProps = (state) => {
+  return {
+    user: state.loginState.user,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(actions, dispatch)
   };
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(NavigationControl);
