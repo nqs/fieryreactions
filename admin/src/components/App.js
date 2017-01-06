@@ -6,7 +6,6 @@ const App = (props) => {
 
   return (
     <div className="container">
-      <Listeners />
       <Navigation />
       <div>
         {props.children}
