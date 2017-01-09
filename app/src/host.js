@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 
 import configureStore from './store';
 import Root from './root_component';
-import { FirebaseActor } from './util/firebase/firebaseActor';
+import { FirebaseListener } from './util/firebase/firebase_listener';
 
 const store = configureStore();
 
@@ -12,8 +12,8 @@ const store = configureStore();
 export default class Host extends Component { // eslint-disable-line
   constructor() {
     super();
-    const firebaseActor = new FirebaseActor(store);
-    firebaseActor.startListening();
+    const listener = new FirebaseListener(store);
+    listener.startListening();
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
-import { Cell } from './cell';
+import {View, Text, StyleSheet} from 'react-native';
+import Cell from './cell';
 import Winner from './winner';
 
 const Grid = (props) => {
@@ -7,24 +8,19 @@ const Grid = (props) => {
   const {grid} = board;
   let index = 0;
   return (
-    <div>
-      <table className="grid">
-        <tbody>
+    <View style={styles.grid}>
         {
           [...Array(3)].map((_, r) =>
-            <tr key={r}>
+            <View key={r} style={styles.row}>
               {
                 [...Array(3)].map((_, c) =>
                   <Cell key={c} grid={grid} index={index++} click={click}/>
                 )
               }
-            </tr>
+            </View>
           )
         }
-        </tbody>
-      </table>
-      <Winner board={board}/>
-    </div>
+    </View>
   );
 };
 
@@ -33,5 +29,14 @@ Grid.propTypes = {
   click: PropTypes.func.isRequired,
 };
 
+
+const styles = StyleSheet.create({
+  grid: {
+    marginTop: 50,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+});
 
 export default Grid;

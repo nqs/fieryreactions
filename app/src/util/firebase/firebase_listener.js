@@ -1,4 +1,4 @@
-export class FirebaseActor {
+export class FirebaseListener {
   constructor(store) {
     this.dispatch = store.dispatch;
     this.store = store;

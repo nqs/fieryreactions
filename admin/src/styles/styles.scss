@@ -14,6 +14,13 @@ body {
 .cell{
     border: 5px black solid;
     font-size: 20vw;
+    width:20vw;
+    height: 20vw;
+}
+
+.cell i {
+    text-align: center;
+    width: 100%;
 }
 .grid {
     margin: 0px auto;

@@ -1,12 +1,8 @@
 import {connect} from 'react-redux';
 import Grid from './grid';
-import {selectCell} from '../../actions';
-const mapStateToProps = (state) => {
-  return {
-    board: state.boardState.board,
-    user: state.loginState.user,
-  };
-};
+import selectCell from './select_cell';
+
+const mapStateToProps = ({board}) => ({board: board.board});
 
 const mapDispatchToProps = (dispatch) => {
   return {

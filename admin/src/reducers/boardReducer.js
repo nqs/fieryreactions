@@ -4,23 +4,29 @@ import {
 } from '../actions';
 
 const INITIAL_STATE = {
-  board: null,
+  id: null,
+  board: null
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case BOARD_CREATE: {
-      const board = action.board;
+      const {id, board} = action;
       return {
         ...state,
+        id,
         board,
       };
     }
     case BOARD_UPDATED: {
       const board = action.board;
+      const grid = board.grid.slice();
       return {
         ...state,
-        board,
+        board: {
+          ...board,
+          grid,
+        },
       };
     }
     default:

@@ -1,7 +1,6 @@
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import SignIn from './signin';
-import {login} from '../../actions';
+import {login, boardCreate} from '../../actions';
 const mapStateToProps = (state) => {
   return {
     user: state.loginState.user,
@@ -10,11 +9,14 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    login: () => dispatch(login()),
+    login: () => {
+      dispatch(boardCreate());
+      dispatch(login());
+    }
   };
-}
+};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(SignIn);

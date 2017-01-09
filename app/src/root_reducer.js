@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 
-import quote from './features/quotes/quote_reducer';
+import board from './features/board/board_reducer';
 
 const rootReducer = combineReducers({
-  quote,
+  board,
 });
 
 export default rootReducer;
