@@ -1,5 +1,5 @@
-/*import React, {Component, PropTypes} from 'react';
-import {Modal, Button} from 'react-bootstrap';
+import React, {Component, PropTypes} from 'react';
+import {View, Text, StyleSheet, Modal, TouchableHighlight} from 'react-native';
 
 export default class Winner extends Component { // eslint-disable-line
   constructor(){
@@ -15,25 +15,24 @@ export default class Winner extends Component { // eslint-disable-line
     const close = () => this.setState({ hide: true});
     return (
       <Modal
-          show={!hide && winner !== 0}
-          onHide={close}
-          container={this}
-          aria-labelledby="contained-modal-title"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title">Game Over</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {winner === 1 ? "X" : "O"} won!
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
+          animationType={"slide"}
+          transparent={false}
+          visible={!hide && winner !== 0}
+      >
+        <View style={{marginTop: 22}}>
+          <View>
+            <Text>Game Over!</Text>
+            <Text>{winner === 1 ? "X" : "O"} won!</Text>
+            <TouchableHighlight onPress={close}>
+              <Text>Close</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+      </Modal>
     );
   }
 }
 
 Winner.propTypes = {
   board: PropTypes.object.isRequired,
-};*/
+};

@@ -16,7 +16,6 @@ const firebaseApp = () => {
   return _firebaseApp;
 };
 
-export const timestamp = firebase.database.ServerValue.TIMESTAMP;
 export const database = firebaseApp().database();
 export const auth = firebaseApp().auth();
 export const boards = database.ref('boards');

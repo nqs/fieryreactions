@@ -20,6 +20,7 @@ const Grid = (props) => {
             </View>
           )
         }
+        <Winner board={board}/>
     </View>
   );
 };
