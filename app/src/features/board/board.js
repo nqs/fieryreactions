@@ -2,7 +2,13 @@ import {connect} from 'react-redux';
 import Grid from './grid';
 import selectCell from './select_cell';
 
-const mapStateToProps = ({board}) => ({board: board.board});
+const mapStateToProps = ({board}) => {
+  const currentBoard = board.get("boards").get(board.get("current"));
+
+  return {
+    board: currentBoard ? currentBoard.toJS() : {}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

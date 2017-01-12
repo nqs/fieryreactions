@@ -1,0 +1,3 @@
+export const BOARD_UPDATED= 'BOARD_UPDATED';
+export const BOARD_REMOVED= 'BOARD_REMOVED';
+export const BOARD_SELECTED= 'BOARD_SELECTED';

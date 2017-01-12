@@ -1,13 +1,16 @@
 import {stateReducer} from '../../util/reducer';
-import {BOARD_UPDATED} from './select_cell';
+import Immutable from 'immutable';
+import {BOARD_UPDATED, BOARD_SELECTED} from './board_constants';
 
-export default stateReducer({
-  "id" : "123",
-  "board" : {
-    "grid" : [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
-    "winner" : 0
-  }
-},
+export default stateReducer(Immutable.fromJS({
+  boards: {},
+  current: 'nick@nicholasstewartcom',
+}),
 {
-  BOARD_UPDATED: (payload) => payload
+  BOARD_SELECTED: (state, payload) => {
+    return state.set("current", payload.id);
+  },
+  BOARD_UPDATED: (state, payload) => {
+    return state.setIn(["boards", payload.id], payload.board);
+  },
 });

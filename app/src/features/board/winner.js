@@ -12,12 +12,13 @@ export default class Winner extends Component { // eslint-disable-line
   render() {
     const winner = this.props.board.winner;
     const hide = this.state.hide;
+    const isWinner = winner === 1 || winner === -1;
     const close = () => this.setState({ hide: true});
     return (
       <Modal
           animationType={"slide"}
           transparent={false}
-          visible={!hide && winner !== 0}
+          visible={!hide && isWinner}
       >
         <View style={{marginTop: 22}}>
           <View>

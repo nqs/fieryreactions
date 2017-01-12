@@ -3,7 +3,7 @@ export const stateReducer = (initialState, stateChanges) =>
     if(stateChanges){
       const stateChange = stateChanges[action.type];
       if (stateChange) {
-        return stateChange(action.payload);
+        return stateChange(state, action.payload);
       }
     }
     return state;

@@ -1,26 +1,16 @@
 import {isWinningMove} from '../../util/board/board_service';
 import { database, boards } from '../../util/firebase/firebase';
-export const BOARD_UPDATED= 'BOARD_UPDATED';
 
 export default (index) => (dispatch, getState) => {
-  const {id, board} = getState().board;
-  if(board.winner === 0) {
-    const turn = board.grid.reduce((a,b)=>a+b);
-    const grid = board.grid.slice();
+  const boardState = getState().board;
+  const id = boardState.get("current");
+  let board = boardState.get("boards").get(id);
+  const turn = board.get("grid").reduce((a,b)=>a+b);
 
-    grid[index] = turn === 0 ? 1 : -1;
-
-    const winner = isWinningMove(grid, index);
-
-    database.ref(`boards/${id}`).set(board).then( () => dispatch({
-      type: BOARD_UPDATED,
-      payload:{
-        id,
-        board : {
-          grid,
-          winner
-        },
-      },
-    }));
+  if(board.get("winner") === 0 && turn === 0) {
+    board = board.setIn(["grid", index], 1);
+    const winner = isWinningMove(board.get("grid").toJS(), index);
+    board = board.set("winner", winner);
+    database.ref(`boards/${id}`).set(board.toJS());
   }
 };
