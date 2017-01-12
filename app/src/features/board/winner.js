@@ -18,6 +18,7 @@ export default class Winner extends Component { // eslint-disable-line
       <Modal
           animationType={"slide"}
           transparent={false}
+          onRequestClose={() => {}}
           visible={!hide && isWinner}
       >
         <View style={{marginTop: 22}}>
