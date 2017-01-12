@@ -4,7 +4,7 @@ import {BOARD_UPDATED, BOARD_SELECTED} from './board_constants';
 
 export default stateReducer(Immutable.fromJS({
   boards: {},
-  current: 'nick@nicholasstewartcom',
+  current: '',
 }),
 {
   BOARD_SELECTED: (state, payload) => {
