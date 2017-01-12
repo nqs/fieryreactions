@@ -7,7 +7,7 @@ export const BOARD_CREATE = 'BOARD_CREATE';
 export const boardCreate = () => (dispatch, getState) => {
   return new Promise((resolve) => {
     const user = getState().loginState.user;
-    const id = user.email.replace('.','');
+    const id = user.email.replace(/\./g,'');
     const board = {
       grid: new Array(9).fill(0),
       user: {
