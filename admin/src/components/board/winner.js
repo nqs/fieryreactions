@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Modal, Button, StyleSheet} from 'react-bootstrap';
+import {Modal, Button} from 'react-bootstrap';
 
 export default class Winner extends Component { // eslint-disable-line
   constructor(){

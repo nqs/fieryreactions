@@ -1,5 +1,5 @@
-import {isWinningMove} from '../../util/board/board_service';
-import { database, boards } from '../../util/firebase/firebase';
+import {isWinningMove} from '../../../util/board/board_service';
+import { database, boards } from '../../../util/firebase/firebase';
 
 export default (index) => (dispatch, getState) => {
   const boardState = getState().board;

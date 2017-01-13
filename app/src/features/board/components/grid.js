@@ -24,8 +24,8 @@ const Grid = (props) => {
               ) : null
           }
       </View>
-      <BoardSelector boards={{}} />
-      <Winner board={board}/>
+      <BoardSelector />
+      <Winner />
     </View>
   );
 };

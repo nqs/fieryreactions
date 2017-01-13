@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import React, { PropTypes } from 'react';
-import {View, Picker, StyleSheet} from 'react-native';
-import boardSelect from './board_select';
+import {View, Picker} from 'react-native';
+import boardSelect from '../actions/board_select';
 
 const BoardSelector = (props) => {
   const {boards, current, select} = props;
@@ -24,10 +24,6 @@ BoardSelector.propTypes = {
   current : PropTypes.string,
   select : PropTypes.func.isRequired,
 };
-
-const styles = StyleSheet.create({
-
-});
 
 
 const mapStateToProps = ({board}) => ({
