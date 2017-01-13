@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
-const NavigationControl = (props) => {
-  const {user} = props;
+const NavigationControl = () => {
   return (
     <Navbar>
       <Navbar.Header>
@@ -11,13 +10,7 @@ const NavigationControl = (props) => {
        <Nav>
          <NavItem><b>Fiery Reactions</b></NavItem>
        </Nav>
-       <Navbar.Toggle />
       </Navbar.Header>
-      <Navbar.Collapse>
-        <Nav pullRight>
-          <NavItem>{user != null ? `Welcome, ${user.displayName} ` : ''}</NavItem>
-        </Nav>
-      </Navbar.Collapse>
    </Navbar>
   );
 };
